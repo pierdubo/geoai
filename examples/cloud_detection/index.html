@@ -12,13 +12,13 @@
         <meta name="author" content="opengeos">
       
       
-        <link rel="canonical" href="https://opengeoai.org/examples/building_detection_lidar/">
+        <link rel="canonical" href="https://opengeoai.org/examples/cloud_detection/">
       
       
-        <link rel="prev" href="../batch_segmentation/">
+        <link rel="prev" href="../clean_segmentation_results/">
       
       
-        <link rel="next" href="../instance_segmentation/">
+        <link rel="next" href="../../workshops/GeoAI_Workshop_2025/">
       
       
       <link rel="icon" href="../../assets/logo.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Building detection lidar - GeoAI</title>
+        <title>Cloud detection - GeoAI</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-detection-from-aerial-imagery-and-lidar-data" class="md-skip">
+        <a href="#cloud-detection-with-omnicloudmask" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building detection lidar
+              Cloud detection
             
           </span>
         </div>
@@ -1380,32 +1380,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Building detection lidar
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../building_detection_lidar/" class="md-nav__link">
         
   
   
@@ -1416,209 +1394,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#install-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Install packages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Import libraries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-sample-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Download sample data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-sample-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize sample data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stack-bands" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stack bands
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-training-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create training data
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#train-semantic-segmentation-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Train semantic segmentation model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluate-the-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluate the model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run inference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vectorize-masks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vectorize masks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-geometric-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add geometric properties
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visualize results
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Metrics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Performance Metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔸 Definitions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔸 Definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#iou-jaccard-index" class="md-nav__link">
-    <span class="md-ellipsis">
-      IoU (Jaccard Index)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dice-score-f1-score-for-sets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dice Score (F1 Score for Sets)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔸 Key Differences
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relationship" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔸 Relationship
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-what" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔸 When to Use What
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1950,10 +1725,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cloud_detection/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Cloud detection
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1964,6 +1761,212 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-synthetic-satellite-imagery" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create Synthetic Satellite Imagery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-visualize-the-input-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Visualize the Input Image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-predict-cloud-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Predict Cloud Mask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-visualize-cloud-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Visualize Cloud Mask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-calculate-cloud-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Calculate Cloud Statistics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-create-cloud-free-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Create Cloud-Free Mask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-compare-different-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Compare Different Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-working-with-geotiff-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Working with GeoTIFF Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-batch-processing-multiple-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Batch Processing Multiple Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-use-case-filter-usable-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Use Case: Filter Usable Scenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-best-practices-and-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Best Practices and Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Best Practices and Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Tips
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-omnicloudmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use OmniCloudMask
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-specific-band-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor-Specific Band Indices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2576,9 +2579,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-packages" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Install packages
+      Installation
     </span>
   </a>
   
@@ -2587,135 +2590,152 @@
         <li class="md-nav__item">
   <a href="#import-libraries" class="md-nav__link">
     <span class="md-ellipsis">
-      Import libraries
+      Import Libraries
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-sample-data" class="md-nav__link">
+  <a href="#1-create-synthetic-satellite-imagery" class="md-nav__link">
     <span class="md-ellipsis">
-      Download sample data
+      1. Create Synthetic Satellite Imagery
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualize-sample-data" class="md-nav__link">
+  <a href="#2-visualize-the-input-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualize sample data
+      2. Visualize the Input Image
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stack-bands" class="md-nav__link">
+  <a href="#3-predict-cloud-mask" class="md-nav__link">
     <span class="md-ellipsis">
-      Stack bands
+      3. Predict Cloud Mask
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-training-data" class="md-nav__link">
+  <a href="#4-visualize-cloud-mask" class="md-nav__link">
     <span class="md-ellipsis">
-      Create training data
+      4. Visualize Cloud Mask
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#train-semantic-segmentation-model" class="md-nav__link">
+  <a href="#5-calculate-cloud-statistics" class="md-nav__link">
     <span class="md-ellipsis">
-      Train semantic segmentation model
+      5. Calculate Cloud Statistics
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#evaluate-the-model" class="md-nav__link">
+  <a href="#6-create-cloud-free-mask" class="md-nav__link">
     <span class="md-ellipsis">
-      Evaluate the model
+      6. Create Cloud-Free Mask
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-inference" class="md-nav__link">
+  <a href="#7-compare-different-classes" class="md-nav__link">
     <span class="md-ellipsis">
-      Run inference
+      7. Compare Different Classes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vectorize-masks" class="md-nav__link">
+  <a href="#8-working-with-geotiff-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Vectorize masks
+      8. Working with GeoTIFF Files
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-geometric-properties" class="md-nav__link">
+  <a href="#9-batch-processing-multiple-images" class="md-nav__link">
     <span class="md-ellipsis">
-      Add geometric properties
+      9. Batch Processing Multiple Images
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualize-results" class="md-nav__link">
+  <a href="#10-use-case-filter-usable-scenes" class="md-nav__link">
     <span class="md-ellipsis">
-      Visualize results
+      10. Use Case: Filter Usable Scenes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#performance-metrics" class="md-nav__link">
+  <a href="#11-best-practices-and-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Metrics
+      11. Best Practices and Tips
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Performance Metrics">
+    <nav class="md-nav" aria-label="11. Best Practices and Tips">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#definitions" class="md-nav__link">
+  <a href="#input-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      🔸 Definitions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔸 Definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#iou-jaccard-index" class="md-nav__link">
-    <span class="md-ellipsis">
-      IoU (Jaccard Index)
+      Input Requirements
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dice-score-f1-score-for-sets" class="md-nav__link">
+  <a href="#performance-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      Dice Score (F1 Score for Sets)
+      Performance Tips
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-omnicloudmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use OmniCloudMask
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-specific-band-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor-Specific Band Indices
     </span>
   </a>
   
@@ -2725,36 +2745,22 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      🔸 Key Differences
+      Summary
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#relationship" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      🔸 Relationship
+      References
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-what" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔸 When to Use What
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2771,7 +2777,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/examples/building_detection_lidar/building_detection_lidar.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/examples/cloud_detection/cloud_detection.ipynb" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"/></svg>
     </a>
 
@@ -3226,9 +3232,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="building-detection-from-aerial-imagery-and-lidar-data">Building Detection from Aerial Imagery and LiDAR Data<a class="anchor-link" href="#building-detection-from-aerial-imagery-and-lidar-data">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/building_detection_lidar.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p>This notebook demonstrates how to train semantic segmentation models for building detection from <a href="https://planetarycomputer.microsoft.com/dataset/naip">NAIP aerial imagery</a> and <a href="https://planetarycomputer.microsoft.com/dataset/3dep-lidar-hag">height above ground (HAG)</a> data derived from LiDAR data with just a few lines of code. You can adapt this notebook to segment other objects of interest (such as trees, cars, etc.) from aerial imagery and LiDAR data.</p>
-<h2 id="install-packages">Install packages<a class="anchor-link" href="#install-packages">¶</a></h2><p>To use the new functionality, ensure the required packages are installed.</p>
+<h1 id="cloud-detection-with-omnicloudmask">Cloud Detection with OmniCloudMask<a class="anchor-link" href="#cloud-detection-with-omnicloudmask">¶</a></h1><p><a href="https://colab.research.google.com/github/opengeos/geoai/blob/main/docs/examples/cloud_detection.ipynb"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>This notebook demonstrates how to use OmniCloudMask integration in GeoAI for detecting clouds and cloud shadows in satellite imagery. OmniCloudMask performs semantic segmentation to classify pixels into four categories:</p>
+<ul>
+<li><strong>0: Clear</strong> - Cloud-free pixels</li>
+<li><strong>1: Thick Cloud</strong> - Opaque cloud cover</li>
+<li><strong>2: Thin Cloud</strong> - Semi-transparent cloud cover</li>
+<li><strong>3: Cloud Shadow</strong> - Shadows cast by clouds</li>
+</ul>
+<p>OmniCloudMask supports Sentinel-2, Landsat 8, PlanetScope, and Maxar imagery at 10-50m spatial resolution.</p>
+<h2 id="installation">Installation<a class="anchor-link" href="#installation">¶</a></h2><p>Uncomment the following line to install the required packages if needed.</p>
 </div>
 </div>
 </div>
@@ -3251,9 +3264,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install geoai-py</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># %pip install -U "geoai-py[extra]"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1"># %pip install geoai-py</div>
+<div class="clipboard-copy-txt" id="cell-1"># %pip install -U "geoai-py[extra]"</div>
 </div>
 </div>
 </div>
@@ -3266,7 +3279,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="import-libraries">Import libraries<a class="anchor-link" href="#import-libraries">¶</a></h2>
+<h2 id="import-libraries">Import Libraries<a class="anchor-link" href="#import-libraries">¶</a></h2>
 </div>
 </div>
 </div>
@@ -3289,11 +3302,49 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">geoai</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">ListedColormap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rasterio.transform</span><span class="w"> </span><span class="kn">import</span> <span class="n">from_bounds</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Import GeoAI cloud mask utilities</span>
+<span class="c1"># Import from the tools subpackage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">geoai.tools.cloudmask</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">predict_cloud_mask</span><span class="p">,</span>
+    <span class="n">predict_cloud_mask_from_raster</span><span class="p">,</span>
+    <span class="n">predict_cloud_mask_batch</span><span class="p">,</span>
+    <span class="n">calculate_cloud_statistics</span><span class="p">,</span>
+    <span class="n">create_cloud_free_mask</span><span class="p">,</span>
+    <span class="n">CLEAR</span><span class="p">,</span>
+    <span class="n">THICK_CLOUD</span><span class="p">,</span>
+    <span class="n">THIN_CLOUD</span><span class="p">,</span>
+    <span class="n">CLOUD_SHADOW</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-2">import os
-import geoai</div>
+<div class="clipboard-copy-txt" id="cell-2">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+import rasterio
+from rasterio.transform import from_bounds
+import tempfile
+import os
+
+# Import GeoAI cloud mask utilities
+# Import from the tools subpackage
+from geoai.tools.cloudmask import (
+    predict_cloud_mask,
+    predict_cloud_mask_from_raster,
+    predict_cloud_mask_batch,
+    calculate_cloud_statistics,
+    create_cloud_free_mask,
+    CLEAR,
+    THICK_CLOUD,
+    THIN_CLOUD,
+    CLOUD_SHADOW,
+)</div>
 </div>
 </div>
 </div>
@@ -3306,7 +3357,7 @@ import geoai</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="download-sample-data">Download sample data<a class="anchor-link" href="#download-sample-data">¶</a></h2><p>We'll use the same dataset as the Mask R-CNN example for consistency.</p>
+<h2 id="1-create-synthetic-satellite-imagery">1. Create Synthetic Satellite Imagery<a class="anchor-link" href="#1-create-synthetic-satellite-imagery">¶</a></h2><p>For demonstration purposes, let's create synthetic satellite imagery with RGB and NIR bands.</p>
 </div>
 </div>
 </div>
@@ -3329,19 +3380,122 @@ import geoai</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train_aerial_url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_train_naip.tif"</span>
-<span class="n">train_LiDAR_url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_train_hag.tif"</span>
-<span class="n">train_building_url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_buildings_train.geojson"</span>
-<span class="n">test_aerial_url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_test_naip.tif"</span>
-<span class="n">test_LiDAR_url</span> <span class="o">=</span> <span class="s2">"https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_test_hag.tif"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_synthetic_satellite_image</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span> <span class="n">cloud_coverage</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Create synthetic satellite imagery (R, G, NIR bands).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        size: Image dimensions (height, width)</span>
+<span class="sd">        cloud_coverage: Fraction of image covered by clouds (0-1)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        3D array with shape (3, height, width) containing R, G, NIR bands</span>
+<span class="sd">    """</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+    <span class="c1"># Create base reflectance values typical of vegetation</span>
+    <span class="c1"># Red: low (absorbed by chlorophyll)</span>
+    <span class="c1"># Green: medium</span>
+    <span class="c1"># NIR: high (reflected by vegetation)</span>
+    <span class="n">red</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2000</span> <span class="o">+</span> <span class="mi">500</span>  <span class="c1"># 500-2500</span>
+    <span class="n">green</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3000</span> <span class="o">+</span> <span class="mi">1000</span>  <span class="c1"># 1000-4000</span>
+    <span class="n">nir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5000</span> <span class="o">+</span> <span class="mi">3000</span>  <span class="c1"># 3000-8000</span>
+
+    <span class="c1"># Add some spatial structure (vegetation patches)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">gaussian_filter</span>
+
+    <span class="n">red</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">green</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">green</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">nir</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="c1"># Add cloud patterns</span>
+    <span class="k">if</span> <span class="n">cloud_coverage</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Create cloud mask</span>
+        <span class="n">cloud_base</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">cloud_base</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">cloud_base</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">cloud_mask</span> <span class="o">=</span> <span class="n">cloud_base</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">cloud_coverage</span><span class="p">)</span>
+
+        <span class="c1"># Clouds have high reflectance in all bands</span>
+        <span class="n">cloud_value</span> <span class="o">=</span> <span class="mi">8000</span>
+        <span class="n">red</span><span class="p">[</span><span class="n">cloud_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud_value</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">cloud_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span>
+        <span class="n">green</span><span class="p">[</span><span class="n">cloud_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud_value</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">cloud_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span>
+        <span class="n">nir</span><span class="p">[</span><span class="n">cloud_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">cloud_value</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">cloud_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">*</span> <span class="mi">1000</span>
+
+    <span class="c1"># Stack into (3, H, W) format</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">nir</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">image</span>
+
+
+<span class="c1"># Create synthetic image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">create_synthetic_satellite_image</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span> <span class="n">cloud_coverage</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Created synthetic image with shape: </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Value range: </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">train_aerial_url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_train_naip.tif"
-train_LiDAR_url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_train_hag.tif"
-train_building_url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_buildings_train.geojson"
-test_aerial_url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_test_naip.tif"
-test_LiDAR_url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main/las_vegas_test_hag.tif"</div>
+<div class="clipboard-copy-txt" id="cell-3">def create_synthetic_satellite_image(size=(512, 512), cloud_coverage=0.3):
+    """
+    Create synthetic satellite imagery (R, G, NIR bands).
+
+    Args:
+        size: Image dimensions (height, width)
+        cloud_coverage: Fraction of image covered by clouds (0-1)
+
+    Returns:
+        3D array with shape (3, height, width) containing R, G, NIR bands
+    """
+    np.random.seed(42)
+
+    # Create base reflectance values typical of vegetation
+    # Red: low (absorbed by chlorophyll)
+    # Green: medium
+    # NIR: high (reflected by vegetation)
+    red = np.random.rand(*size) * 2000 + 500  # 500-2500
+    green = np.random.rand(*size) * 3000 + 1000  # 1000-4000
+    nir = np.random.rand(*size) * 5000 + 3000  # 3000-8000
+
+    # Add some spatial structure (vegetation patches)
+    from scipy.ndimage import gaussian_filter
+
+    red = gaussian_filter(red, sigma=20)
+    green = gaussian_filter(green, sigma=20)
+    nir = gaussian_filter(nir, sigma=20)
+
+    # Add cloud patterns
+    if cloud_coverage &gt; 0:
+        # Create cloud mask
+        cloud_base = np.random.rand(*size)
+        cloud_base = gaussian_filter(cloud_base, sigma=30)
+        cloud_mask = cloud_base &gt; (1 - cloud_coverage)
+
+        # Clouds have high reflectance in all bands
+        cloud_value = 8000
+        red[cloud_mask] = cloud_value + np.random.rand(cloud_mask.sum()) * 1000
+        green[cloud_mask] = cloud_value + np.random.rand(cloud_mask.sum()) * 1000
+        nir[cloud_mask] = cloud_value + np.random.rand(cloud_mask.sum()) * 1000
+
+    # Stack into (3, H, W) format
+    image = np.stack([red, green, nir], axis=0).astype(np.float32)
+
+    return image
+
+
+# Create synthetic image
+image = create_synthetic_satellite_image(size=(512, 512), cloud_coverage=0.2)
+print(f"Created synthetic image with shape: {image.shape}")
+print(f"Value range: {image.min():.0f} - {image.max():.0f}")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="2-visualize-the-input-image">2. Visualize the Input Image<a class="anchor-link" href="#2-visualize-the-input-image">¶</a></h2><p>Let's visualize the RGB composite of our synthetic satellite image.</p>
 </div>
 </div>
 </div>
@@ -3364,17 +3518,59 @@ test_LiDAR_url = "https://huggingface.co/datasets/giswqs/geospatial/resolve/main
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train_aerial_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">train_aerial_url</span><span class="p">)</span>
-<span class="n">train_LiDAR_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">train_LiDAR_url</span><span class="p">)</span>
-<span class="n">train_building_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">train_building_url</span><span class="p">)</span>
-<span class="n">test_aerial_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">test_aerial_url</span><span class="p">)</span>
-<span class="n">test_LiDAR_path</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">test_LiDAR_url</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visualize_rgb</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"RGB Composite"</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Visualize RGB composite from satellite image.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image: Array with shape (3, H, W) or (H, W, 3)</span>
+<span class="sd">        title: Plot title</span>
+<span class="sd">    """</span>
+    <span class="c1"># Convert to (H, W, 3) if needed</span>
+    <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">rgb</span> <span class="o">=</span> <span class="n">image</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Take R, G, (NIR-&gt;B for vis)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">rgb</span> <span class="o">=</span> <span class="n">image</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># Normalize to 0-1 for display</span>
+    <span class="n">rgb_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">rgb</span> <span class="o">-</span> <span class="n">rgb</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">rgb</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">rgb</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rgb_norm</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">visualize_rgb</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">"Synthetic Satellite Image (RGB)"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">train_aerial_path = geoai.download_file(train_aerial_url)
-train_LiDAR_path = geoai.download_file(train_LiDAR_url)
-train_building_path = geoai.download_file(train_building_url)
-test_aerial_path = geoai.download_file(test_aerial_url)
-test_LiDAR_path = geoai.download_file(test_LiDAR_url)</div>
+<div class="clipboard-copy-txt" id="cell-4">def visualize_rgb(image, title="RGB Composite"):
+    """
+    Visualize RGB composite from satellite image.
+
+    Args:
+        image: Array with shape (3, H, W) or (H, W, 3)
+        title: Plot title
+    """
+    # Convert to (H, W, 3) if needed
+    if image.shape[0] == 3:
+        rgb = image[:3].transpose(1, 2, 0)  # Take R, G, (NIR-&gt;B for vis)
+    else:
+        rgb = image[:, :, :3]
+
+    # Normalize to 0-1 for display
+    rgb_norm = (rgb - rgb.min()) / (rgb.max() - rgb.min())
+
+    plt.figure(figsize=(10, 10))
+    plt.imshow(rgb_norm)
+    plt.title(title, fontsize=16)
+    plt.axis("off")
+    plt.tight_layout()
+    plt.show()
+
+
+visualize_rgb(image, "Synthetic Satellite Image (RGB)")</div>
 </div>
 </div>
 </div>
@@ -3387,7 +3583,7 @@ test_LiDAR_path = geoai.download_file(test_LiDAR_url)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-sample-data">Visualize sample data<a class="anchor-link" href="#visualize-sample-data">¶</a></h2><p>Visualize the building footprints with the aerial imagery.</p>
+<h2 id="3-predict-cloud-mask">3. Predict Cloud Mask<a class="anchor-link" href="#3-predict-cloud-mask">¶</a></h2><p>Now let's use OmniCloudMask to detect clouds and cloud shadows.</p>
 </div>
 </div>
 </div>
@@ -3410,11 +3606,46 @@ test_LiDAR_path = geoai.download_file(test_LiDAR_url)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"TITILER_ENDPOINT"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"https://giswqs-titiler-endpoint.hf.space"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Predict cloud mask</span>
+<span class="c1"># Note: First run will download the model (may take a moment)</span>
+<span class="n">cloud_mask</span> <span class="o">=</span> <span class="n">predict_cloud_mask</span><span class="p">(</span>
+    <span class="n">image</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">inference_device</span><span class="o">=</span><span class="s2">"cpu"</span><span class="p">,</span>  <span class="c1"># Use "cuda" if GPU available</span>
+    <span class="n">inference_dtype</span><span class="o">=</span><span class="s2">"fp32"</span><span class="p">,</span>  <span class="c1"># Use "bf16" for faster inference on supported hardware</span>
+    <span class="n">patch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">model_version</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>  <span class="c1"># Model versions: 1, 2, or 3</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cloud mask shape: </span><span class="si">{</span><span class="n">cloud_mask</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Classes found: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">cloud_mask</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">os.environ["TITILER_ENDPOINT"] = "https://giswqs-titiler-endpoint.hf.space"</div>
+<div class="clipboard-copy-txt" id="cell-5"># Predict cloud mask
+# Note: First run will download the model (may take a moment)
+cloud_mask = predict_cloud_mask(
+    image,
+    batch_size=1,
+    inference_device="cpu",  # Use "cuda" if GPU available
+    inference_dtype="fp32",  # Use "bf16" for faster inference on supported hardware
+    patch_size=1000,
+    model_version=3,  # Model versions: 1, 2, or 3
+)
+
+print(f"Cloud mask shape: {cloud_mask.shape}")
+print(f"Classes found: {np.unique(cloud_mask)}")</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="4-visualize-cloud-mask">4. Visualize Cloud Mask<a class="anchor-link" href="#4-visualize-cloud-mask">¶</a></h2><p>Let's visualize the cloud detection results with a color-coded map.</p>
 </div>
 </div>
 </div>
@@ -3437,9 +3668,35 @@ test_LiDAR_path = geoai.download_file(test_LiDAR_url)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_vector_interactive</span><span class="p">(</span><span class="n">train_building_path</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="n">train_aerial_url</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Create colormap for cloud classes</span>
+<span class="c1"># Clear (blue), Thick Cloud (white), Thin Cloud (light gray), Shadow (dark gray)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"#4575b4"</span><span class="p">,</span> <span class="s2">"#ffffff"</span><span class="p">,</span> <span class="s2">"#d3d3d3"</span><span class="p">,</span> <span class="s2">"#404040"</span><span class="p">]</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Cloud Mask Classification"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s2">"Clear"</span><span class="p">,</span> <span class="s2">"Thick Cloud"</span><span class="p">,</span> <span class="s2">"Thin Cloud"</span><span class="p">,</span> <span class="s2">"Shadow"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"X"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Y"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">geoai.view_vector_interactive(train_building_path, tiles=train_aerial_url)</div>
+<div class="clipboard-copy-txt" id="cell-6"># Create colormap for cloud classes
+# Clear (blue), Thick Cloud (white), Thin Cloud (light gray), Shadow (dark gray)
+colors = ["#4575b4", "#ffffff", "#d3d3d3", "#404040"]
+cmap = ListedColormap(colors)
+
+plt.figure(figsize=(12, 10))
+im = plt.imshow(cloud_mask, cmap=cmap, interpolation="nearest", vmin=0, vmax=3)
+plt.title("Cloud Mask Classification", fontsize=16)
+cbar = plt.colorbar(im, ticks=[0, 1, 2, 3])
+cbar.ax.set_yticklabels(["Clear", "Thick Cloud", "Thin Cloud", "Shadow"])
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.tight_layout()
+plt.show()</div>
 </div>
 </div>
 </div>
@@ -3452,7 +3709,7 @@ test_LiDAR_path = geoai.download_file(test_LiDAR_url)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Visualize the building footprints with the height above ground (HAG) data derived from LiDAR data.</p>
+<h2 id="5-calculate-cloud-statistics">5. Calculate Cloud Statistics<a class="anchor-link" href="#5-calculate-cloud-statistics">¶</a></h2><p>Let's quantify the cloud coverage and other statistics.</p>
 </div>
 </div>
 </div>
@@ -3475,9 +3732,27 @@ test_LiDAR_path = geoai.download_file(test_LiDAR_url)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_vector_interactive</span><span class="p">(</span><span class="n">train_building_path</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="n">train_LiDAR_url</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="n">calculate_cloud_statistics</span><span class="p">(</span><span class="n">cloud_mask</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Cloud Coverage Statistics:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Total pixels: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'total_pixels'</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Clear pixels: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'clear_pixels'</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'clear_percent'</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Thick cloud: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'thick_cloud_pixels'</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Thin cloud: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'thin_cloud_pixels'</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Cloud shadow: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'shadow_pixels'</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="se">\n</span><span class="s2">Total cloud coverage: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'cloud_percent'</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Shadow coverage: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'shadow_percent'</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-7">geoai.view_vector_interactive(train_building_path, tiles=train_LiDAR_url)</div>
+<div class="clipboard-copy-txt" id="cell-7">stats = calculate_cloud_statistics(cloud_mask)
+
+print("Cloud Coverage Statistics:")
+print(f"  Total pixels: {stats['total_pixels']:,}")
+print(f"  Clear pixels: {stats['clear_pixels']:,} ({stats['clear_percent']:.1f}%)")
+print(f"  Thick cloud: {stats['thick_cloud_pixels']:,}")
+print(f"  Thin cloud: {stats['thin_cloud_pixels']:,}")
+print(f"  Cloud shadow: {stats['shadow_pixels']:,}")
+print(f"  \nTotal cloud coverage: {stats['cloud_percent']:.1f}%")
+print(f"  Shadow coverage: {stats['shadow_percent']:.1f}%")</div>
 </div>
 </div>
 </div>
@@ -3490,7 +3765,7 @@ test_LiDAR_path = geoai.download_file(test_LiDAR_url)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="stack-bands">Stack bands<a class="anchor-link" href="#stack-bands">¶</a></h2><p>Stack the NAIP and HAG bands into a single image.</p>
+<h2 id="6-create-cloud-free-mask">6. Create Cloud-Free Mask<a class="anchor-link" href="#6-create-cloud-free-mask">¶</a></h2><p>Create a binary mask showing which pixels are usable (cloud-free).</p>
 </div>
 </div>
 </div>
@@ -3513,25 +3788,76 @@ test_LiDAR_path = geoai.download_file(test_LiDAR_url)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">train_raster_path</span> <span class="o">=</span> <span class="s2">"las_vegas_train_naip_hag.tif"</span>
-<span class="n">geoai</span><span class="o">.</span><span class="n">stack_bands</span><span class="p">(</span>
-    <span class="n">input_files</span><span class="o">=</span><span class="p">[</span><span class="n">train_aerial_path</span><span class="p">,</span> <span class="n">train_LiDAR_path</span><span class="p">],</span>
-    <span class="n">output_file</span><span class="o">=</span><span class="n">train_raster_path</span><span class="p">,</span>
-    <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># Automatically inferred from first image</span>
-    <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="s2">"Byte"</span><span class="p">,</span>  <span class="c1"># or "UInt16", "Float32"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Strict cloud-free mask (only clear pixels)</span>
+<span class="n">cloud_free_strict</span> <span class="o">=</span> <span class="n">create_cloud_free_mask</span><span class="p">(</span>
+    <span class="n">cloud_mask</span><span class="p">,</span> <span class="n">include_thin_clouds</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_shadows</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
+
+<span class="c1"># Relaxed cloud-free mask (accept thin clouds and shadows)</span>
+<span class="n">cloud_free_relaxed</span> <span class="o">=</span> <span class="n">create_cloud_free_mask</span><span class="p">(</span>
+    <span class="n">cloud_mask</span><span class="p">,</span> <span class="n">include_thin_clouds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_shadows</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_free_strict</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"RdYlGn"</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">"Strict Cloud-Free Mask</span><span class="se">\n</span><span class="s2">(</span><span class="si">{</span><span class="n">cloud_free_strict</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cloud_free_strict</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% usable)"</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_free_relaxed</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"RdYlGn"</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">"Relaxed Cloud-Free Mask</span><span class="se">\n</span><span class="s2">(</span><span class="si">{</span><span class="n">cloud_free_relaxed</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cloud_free_relaxed</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% usable)"</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-8">train_raster_path = "las_vegas_train_naip_hag.tif"
-geoai.stack_bands(
-    input_files=[train_aerial_path, train_LiDAR_path],
-    output_file=train_raster_path,
-    resolution=None,  # Automatically inferred from first image
-    overwrite=True,
-    dtype="Byte",  # or "UInt16", "Float32"
-)</div>
+<div class="clipboard-copy-txt" id="cell-8"># Strict cloud-free mask (only clear pixels)
+cloud_free_strict = create_cloud_free_mask(
+    cloud_mask, include_thin_clouds=False, include_shadows=False
+)
+
+# Relaxed cloud-free mask (accept thin clouds and shadows)
+cloud_free_relaxed = create_cloud_free_mask(
+    cloud_mask, include_thin_clouds=True, include_shadows=True
+)
+
+fig, axes = plt.subplots(1, 2, figsize=(16, 7))
+
+axes[0].imshow(cloud_free_strict, cmap="RdYlGn", interpolation="nearest")
+axes[0].set_title(
+    f"Strict Cloud-Free Mask\n({cloud_free_strict.sum() / cloud_free_strict.size * 100:.1f}% usable)",
+    fontsize=14,
+)
+axes[0].axis("off")
+
+axes[1].imshow(cloud_free_relaxed, cmap="RdYlGn", interpolation="nearest")
+axes[1].set_title(
+    f"Relaxed Cloud-Free Mask\n({cloud_free_relaxed.sum() / cloud_free_relaxed.size * 100:.1f}% usable)",
+    fontsize=14,
+)
+axes[1].axis("off")
+
+plt.tight_layout()
+plt.show()</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="7-compare-different-classes">7. Compare Different Classes<a class="anchor-link" href="#7-compare-different-classes">¶</a></h2><p>Let's visualize each cloud class separately.</p>
 </div>
 </div>
 </div>
@@ -3554,23 +3880,43 @@ geoai.stack_bands(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">test_raster_path</span> <span class="o">=</span> <span class="s2">"las_vegas_test_naip_hag.tif"</span>
-<span class="n">geoai</span><span class="o">.</span><span class="n">stack_bands</span><span class="p">(</span>
-    <span class="n">input_files</span><span class="o">=</span><span class="p">[</span><span class="n">test_aerial_path</span><span class="p">,</span> <span class="n">test_LiDAR_path</span><span class="p">],</span>
-    <span class="n">output_file</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">,</span>
-    <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># Automatically inferred from first image</span>
-    <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="s2">"Byte"</span><span class="p">,</span>  <span class="c1"># or "UInt16", "Float32"</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Clear"</span><span class="p">,</span> <span class="s2">"Thick Cloud"</span><span class="p">,</span> <span class="s2">"Thin Cloud"</span><span class="p">,</span> <span class="s2">"Cloud Shadow"</span><span class="p">]</span>
+<span class="n">class_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">CLEAR</span><span class="p">,</span> <span class="n">THICK_CLOUD</span><span class="p">,</span> <span class="n">THIN_CLOUD</span><span class="p">,</span> <span class="n">CLOUD_SHADOW</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">class_names</span><span class="p">,</span> <span class="n">class_values</span><span class="p">)):</span>
+    <span class="c1"># Create binary mask for this class</span>
+    <span class="n">class_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">cloud_mask</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">class_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">percent</span> <span class="o">=</span> <span class="n">count</span> <span class="o">/</span> <span class="n">class_mask</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">class_mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">count</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> pixels (</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-9">test_raster_path = "las_vegas_test_naip_hag.tif"
-geoai.stack_bands(
-    input_files=[test_aerial_path, test_LiDAR_path],
-    output_file=test_raster_path,
-    resolution=None,  # Automatically inferred from first image
-    overwrite=True,
-    dtype="Byte",  # or "UInt16", "Float32"
-)</div>
+<div class="clipboard-copy-txt" id="cell-9">fig, axes = plt.subplots(2, 2, figsize=(14, 14))
+axes = axes.flatten()
+
+class_names = ["Clear", "Thick Cloud", "Thin Cloud", "Cloud Shadow"]
+class_values = [CLEAR, THICK_CLOUD, THIN_CLOUD, CLOUD_SHADOW]
+
+for i, (name, value) in enumerate(zip(class_names, class_values)):
+    # Create binary mask for this class
+    class_mask = (cloud_mask == value).astype(np.uint8)
+    count = class_mask.sum()
+    percent = count / class_mask.size * 100
+
+    axes[i].imshow(class_mask, cmap="gray", interpolation="nearest")
+    axes[i].set_title(f"{name}\n{count:,} pixels ({percent:.1f}%)", fontsize=12)
+    axes[i].axis("off")
+
+plt.tight_layout()
+plt.show()</div>
 </div>
 </div>
 </div>
@@ -3583,7 +3929,7 @@ geoai.stack_bands(
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="create-training-data">Create training data<a class="anchor-link" href="#create-training-data">¶</a></h2><p>We'll create the same training tiles as before.</p>
+<h2 id="8-working-with-geotiff-files">8. Working with GeoTIFF Files<a class="anchor-link" href="#8-working-with-geotiff-files">¶</a></h2><p>OmniCloudMask can process GeoTIFF files directly while preserving geospatial metadata.</p>
 </div>
 </div>
 </div>
@@ -3606,44 +3952,79 @@ geoai.stack_bands(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">out_folder</span> <span class="o">=</span> <span class="s2">"buildings"</span>
-<span class="n">tiles</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">export_geotiff_tiles</span><span class="p">(</span>
-    <span class="n">in_raster</span><span class="o">=</span><span class="n">train_raster_path</span><span class="p">,</span>
-    <span class="n">out_folder</span><span class="o">=</span><span class="n">out_folder</span><span class="p">,</span>
-    <span class="n">in_class_data</span><span class="o">=</span><span class="n">train_building_path</span><span class="p">,</span>
-    <span class="n">tile_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
-    <span class="n">stride</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
-    <span class="n">buffer_radius</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Create temporary directory</span>
+<span class="n">tmpdir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Working directory: </span><span class="si">{</span><span class="n">tmpdir</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Save synthetic image as GeoTIFF</span>
+<span class="n">input_tif</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">"satellite_image.tif"</span><span class="p">)</span>
+<span class="n">output_tif</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">"cloud_mask.tif"</span><span class="p">)</span>
+
+<span class="c1"># Create geographic transform</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">from_bounds</span><span class="p">(</span>
+    <span class="n">west</span><span class="o">=-</span><span class="mf">120.0</span><span class="p">,</span>
+    <span class="n">south</span><span class="o">=</span><span class="mf">35.0</span><span class="p">,</span>
+    <span class="n">east</span><span class="o">=-</span><span class="mf">119.0</span><span class="p">,</span>
+    <span class="n">north</span><span class="o">=</span><span class="mf">36.0</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+    <span class="n">height</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
 <span class="p">)</span>
+
+<span class="c1"># Write image to GeoTIFF (3 bands: R, G, NIR)</span>
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+    <span class="n">input_tif</span><span class="p">,</span>
+    <span class="s2">"w"</span><span class="p">,</span>
+    <span class="n">driver</span><span class="o">=</span><span class="s2">"GTiff"</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">width</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">"EPSG:4326"</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+    <span class="n">compress</span><span class="o">=</span><span class="s2">"lzw"</span><span class="p">,</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saved satellite image to: </span><span class="si">{</span><span class="n">input_tif</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">out_folder = "buildings"
-tiles = geoai.export_geotiff_tiles(
-    in_raster=train_raster_path,
-    out_folder=out_folder,
-    in_class_data=train_building_path,
-    tile_size=512,
-    stride=256,
-    buffer_radius=0,
-)</div>
+<div class="clipboard-copy-txt" id="cell-10"># Create temporary directory
+tmpdir = tempfile.mkdtemp()
+print(f"Working directory: {tmpdir}")
+
+# Save synthetic image as GeoTIFF
+input_tif = os.path.join(tmpdir, "satellite_image.tif")
+output_tif = os.path.join(tmpdir, "cloud_mask.tif")
+
+# Create geographic transform
+transform = from_bounds(
+    west=-120.0,
+    south=35.0,
+    east=-119.0,
+    north=36.0,
+    width=image.shape[2],
+    height=image.shape[1],
+)
+
+# Write image to GeoTIFF (3 bands: R, G, NIR)
+with rasterio.open(
+    input_tif,
+    "w",
+    driver="GTiff",
+    height=image.shape[1],
+    width=image.shape[2],
+    count=3,
+    dtype=image.dtype,
+    crs="EPSG:4326",
+    transform=transform,
+    compress="lzw",
+) as dst:
+    for i in range(3):
+        dst.write(image[i], i + 1)
+
+print(f"Saved satellite image to: {input_tif}")</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="train-semantic-segmentation-model">Train semantic segmentation model<a class="anchor-link" href="#train-semantic-segmentation-model">¶</a></h2><p>Now we'll train a semantic segmentation model using the new <code>train_segmentation_model</code> function. This function supports various architectures from <code>segmentation-models-pytorch</code>:</p>
-<ul>
-<li><strong>Architectures</strong>: <code>unet</code>, <code>unetplusplus</code> <code>deeplabv3</code>, <code>deeplabv3plus</code>, <code>fpn</code>, <code>pspnet</code>, <code>linknet</code>, <code>manet</code></li>
-<li><strong>Encoders</strong>: <code>resnet34</code>, <code>resnet50</code>, <code>efficientnet-b0</code>, <code>mobilenet_v2</code>, etc.</li>
-</ul>
-<p>For more details, please refer to the <a href="https://smp.readthedocs.io/en/latest/models.html">segmentation-models-pytorch documentation</a>.</p>
-<p>Let's train a U-Net with ResNet34 encoder</p>
 </div>
 </div>
 </div>
@@ -3666,52 +4047,31 @@ tiles = geoai.export_geotiff_tiles(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Train U-Net model</span>
-<span class="n">geoai</span><span class="o">.</span><span class="n">train_segmentation_model</span><span class="p">(</span>
-    <span class="n">images_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/images"</span><span class="p">,</span>
-    <span class="n">labels_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/labels"</span><span class="p">,</span>
-    <span class="n">output_dir</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/unet_models"</span><span class="p">,</span>
-    <span class="n">architecture</span><span class="o">=</span><span class="s2">"unet"</span><span class="p">,</span>
-    <span class="n">encoder_name</span><span class="o">=</span><span class="s2">"resnet34"</span><span class="p">,</span>
-    <span class="n">encoder_weights</span><span class="o">=</span><span class="s2">"imagenet"</span><span class="p">,</span>
-    <span class="n">num_channels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># background and building</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
-    <span class="n">num_epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
-    <span class="n">val_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Predict cloud mask from GeoTIFF</span>
+<span class="n">predict_cloud_mask_from_raster</span><span class="p">(</span>
+    <span class="n">input_path</span><span class="o">=</span><span class="n">input_tif</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="o">=</span><span class="n">output_tif</span><span class="p">,</span>
+    <span class="n">red_band</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># Band indices for R, G, NIR</span>
+    <span class="n">green_band</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">nir_band</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">inference_device</span><span class="o">=</span><span class="s2">"cpu"</span><span class="p">,</span>
 <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cloud mask saved to: </span><span class="si">{</span><span class="n">output_tif</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11"># Train U-Net model
-geoai.train_segmentation_model(
-    images_dir=f"{out_folder}/images",
-    labels_dir=f"{out_folder}/labels",
-    output_dir=f"{out_folder}/unet_models",
-    architecture="unet",
-    encoder_name="resnet34",
-    encoder_weights="imagenet",
-    num_channels=5,
-    num_classes=2,  # background and building
-    batch_size=8,
-    num_epochs=50,
-    learning_rate=0.001,
-    val_split=0.2,
-    verbose=True,
-)</div>
+<div class="clipboard-copy-txt" id="cell-11"># Predict cloud mask from GeoTIFF
+predict_cloud_mask_from_raster(
+    input_path=input_tif,
+    output_path=output_tif,
+    red_band=1,  # Band indices for R, G, NIR
+    green_band=2,
+    nir_band=3,
+    inference_device="cpu",
+)
+
+print(f"Cloud mask saved to: {output_tif}")</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="evaluate-the-model">Evaluate the model<a class="anchor-link" href="#evaluate-the-model">¶</a></h2>
 </div>
 </div>
 </div>
@@ -3734,17 +4094,51 @@ geoai.train_segmentation_model(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">plot_performance_metrics</span><span class="p">(</span>
-    <span class="n">history_path</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/unet_models/training_history.pth"</span><span class="p">,</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Verify output and metadata preservation</span>
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">input_tif</span><span class="p">)</span> <span class="k">as</span> <span class="n">src_in</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Input metadata:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  CRS: </span><span class="si">{</span><span class="n">src_in</span><span class="o">.</span><span class="n">crs</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Transform: </span><span class="si">{</span><span class="n">src_in</span><span class="o">.</span><span class="n">transform</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Bounds: </span><span class="si">{</span><span class="n">src_in</span><span class="o">.</span><span class="n">bounds</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Bands: </span><span class="si">{</span><span class="n">src_in</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">output_tif</span><span class="p">)</span> <span class="k">as</span> <span class="n">src_out</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Output metadata:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  CRS: </span><span class="si">{</span><span class="n">src_out</span><span class="o">.</span><span class="n">crs</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Transform: </span><span class="si">{</span><span class="n">src_out</span><span class="o">.</span><span class="n">transform</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Bounds: </span><span class="si">{</span><span class="n">src_out</span><span class="o">.</span><span class="n">bounds</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Bands: </span><span class="si">{</span><span class="n">src_out</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Read and verify cloud mask</span>
+    <span class="n">mask_from_file</span> <span class="o">=</span> <span class="n">src_out</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Classes: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">mask_from_file</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">✓ Geospatial metadata preserved!"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">geoai.plot_performance_metrics(
-    history_path=f"{out_folder}/unet_models/training_history.pth",
-    figsize=(15, 5),
-    verbose=True,
-)</div>
+<div class="clipboard-copy-txt" id="cell-12"># Verify output and metadata preservation
+with rasterio.open(input_tif) as src_in:
+    print("Input metadata:")
+    print(f"  CRS: {src_in.crs}")
+    print(f"  Transform: {src_in.transform}")
+    print(f"  Bounds: {src_in.bounds}")
+    print(f"  Bands: {src_in.count}")
+
+print()
+
+with rasterio.open(output_tif) as src_out:
+    print("Output metadata:")
+    print(f"  CRS: {src_out.crs}")
+    print(f"  Transform: {src_out.transform}")
+    print(f"  Bounds: {src_out.bounds}")
+    print(f"  Bands: {src_out.count}")
+
+    # Read and verify cloud mask
+    mask_from_file = src_out.read(1)
+    print(f"  Classes: {np.unique(mask_from_file)}")
+
+print("\n✓ Geospatial metadata preserved!")</div>
 </div>
 </div>
 </div>
@@ -3757,7 +4151,7 @@ geoai.train_segmentation_model(
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="run-inference">Run inference<a class="anchor-link" href="#run-inference">¶</a></h2><p>Now we'll use the trained model to make predictions on the test image.</p>
+<h2 id="9-batch-processing-multiple-images">9. Batch Processing Multiple Images<a class="anchor-link" href="#9-batch-processing-multiple-images">¶</a></h2><p>Process multiple satellite images at once using batch processing.</p>
 </div>
 </div>
 </div>
@@ -3780,13 +4174,73 @@ geoai.train_segmentation_model(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Define paths</span>
-<span class="n">masks_path</span> <span class="o">=</span> <span class="s2">"building_masks.tif"</span>
-<span class="n">model_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">out_folder</span><span class="si">}</span><span class="s2">/unet_models/best_model.pth"</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Create multiple test images with different cloud coverage</span>
+<span class="n">input_files</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">cloud_coverages</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">coverage</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cloud_coverages</span><span class="p">):</span>
+    <span class="c1"># Create image with specific cloud coverage</span>
+    <span class="n">test_image</span> <span class="o">=</span> <span class="n">create_synthetic_satellite_image</span><span class="p">(</span>
+        <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span> <span class="n">cloud_coverage</span><span class="o">=</span><span class="n">coverage</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Save to file</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"scene_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_clouds</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">coverage</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s2">.tif"</span><span class="p">)</span>
+
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">from_bounds</span><span class="p">(</span><span class="o">-</span><span class="mi">120</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="o">-</span><span class="mi">119</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+        <span class="n">filepath</span><span class="p">,</span>
+        <span class="s2">"w"</span><span class="p">,</span>
+        <span class="n">driver</span><span class="o">=</span><span class="s2">"GTiff"</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+        <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="n">test_image</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
+        <span class="n">crs</span><span class="o">=</span><span class="s2">"EPSG:4326"</span><span class="p">,</span>
+        <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">test_image</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">input_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Created </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">input_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> test images"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">input_files</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-13"># Define paths
-masks_path = "building_masks.tif"
-model_path = f"{out_folder}/unet_models/best_model.pth"</div>
+<div class="clipboard-copy-txt" id="cell-13"># Create multiple test images with different cloud coverage
+input_files = []
+cloud_coverages = [0.1, 0.3, 0.5]
+
+for i, coverage in enumerate(cloud_coverages):
+    # Create image with specific cloud coverage
+    test_image = create_synthetic_satellite_image(
+        size=(256, 256), cloud_coverage=coverage
+    )
+
+    # Save to file
+    filepath = os.path.join(tmpdir, f"scene_{i}_clouds{int(coverage*100)}.tif")
+
+    transform = from_bounds(-120, 35, -119, 36, 256, 256)
+    with rasterio.open(
+        filepath,
+        "w",
+        driver="GTiff",
+        height=256,
+        width=256,
+        count=3,
+        dtype=test_image.dtype,
+        crs="EPSG:4326",
+        transform=transform,
+    ) as dst:
+        for j in range(3):
+            dst.write(test_image[j], j + 1)
+
+    input_files.append(filepath)
+
+print(f"Created {len(input_files)} test images")
+for f in input_files:
+    print(f"  - {os.path.basename(f)}")</div>
 </div>
 </div>
 </div>
@@ -3811,46 +4265,39 @@ model_path = f"{out_folder}/unet_models/best_model.pth"</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run semantic segmentation inference</span>
-<span class="n">geoai</span><span class="o">.</span><span class="n">semantic_segmentation</span><span class="p">(</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="n">test_raster_path</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="n">masks_path</span><span class="p">,</span>
-    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
-    <span class="n">architecture</span><span class="o">=</span><span class="s2">"unet"</span><span class="p">,</span>
-    <span class="n">encoder_name</span><span class="o">=</span><span class="s2">"resnet34"</span><span class="p">,</span>
-    <span class="n">num_channels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-    <span class="n">num_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="n">window_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
-    <span class="n">overlap</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Batch process all images</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="s2">"cloud_masks"</span><span class="p">)</span>
+
+<span class="n">output_files</span> <span class="o">=</span> <span class="n">predict_cloud_mask_batch</span><span class="p">(</span>
+    <span class="n">input_paths</span><span class="o">=</span><span class="n">input_files</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+    <span class="n">red_band</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">green_band</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">nir_band</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">inference_device</span><span class="o">=</span><span class="s2">"cpu"</span><span class="p">,</span>
+    <span class="n">suffix</span><span class="o">=</span><span class="s2">"_cloudmask"</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Processed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">output_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> images"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-14"># Run semantic segmentation inference
-geoai.semantic_segmentation(
-    input_path=test_raster_path,
-    output_path=masks_path,
-    model_path=model_path,
-    architecture="unet",
-    encoder_name="resnet34",
-    num_channels=5,
-    num_classes=2,
-    window_size=512,
-    overlap=256,
-    batch_size=8,
-)</div>
+<div class="clipboard-copy-txt" id="cell-14"># Batch process all images
+output_dir = os.path.join(tmpdir, "cloud_masks")
+
+output_files = predict_cloud_mask_batch(
+    input_paths=input_files,
+    output_dir=output_dir,
+    red_band=1,
+    green_band=2,
+    nir_band=3,
+    inference_device="cpu",
+    suffix="_cloudmask",
+    verbose=True,
+)
+
+print(f"\nProcessed {len(output_files)} images")</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="vectorize-masks">Vectorize masks<a class="anchor-link" href="#vectorize-masks">¶</a></h2><p>Convert the predicted mask to vector format for better visualization and analysis.</p>
 </div>
 </div>
 </div>
@@ -3873,11 +4320,37 @@ geoai.semantic_segmentation(
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">output_vector_path</span> <span class="o">=</span> <span class="s2">"building_masks.geojson"</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">orthogonalize</span><span class="p">(</span><span class="n">masks_path</span><span class="p">,</span> <span class="n">output_vector_path</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Analyze results from batch processing</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Cloud Coverage Analysis:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">output_file</span> <span class="ow">in</span> <span class="n">output_files</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">calculate_cloud_statistics</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Clear: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'clear_percent'</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Cloud: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'cloud_percent'</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Shadow: </span><span class="si">{</span><span class="n">stats</span><span class="p">[</span><span class="s1">'shadow_percent'</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-15">output_vector_path = "building_masks.geojson"
-gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
+<div class="clipboard-copy-txt" id="cell-15"># Analyze results from batch processing
+print("\nCloud Coverage Analysis:")
+print("-" * 60)
+
+for output_file in output_files:
+    with rasterio.open(output_file) as src:
+        mask = src.read(1)
+
+    stats = calculate_cloud_statistics(mask)
+
+    filename = os.path.basename(output_file)
+    print(f"\n{filename}:")
+    print(f"  Clear: {stats['clear_percent']:.1f}%")
+    print(f"  Cloud: {stats['cloud_percent']:.1f}%")
+    print(f"  Shadow: {stats['shadow_percent']:.1f}%")</div>
 </div>
 </div>
 </div>
@@ -3890,7 +4363,73 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="add-geometric-properties">Add geometric properties<a class="anchor-link" href="#add-geometric-properties">¶</a></h2>
+<h2 id="10-use-case-filter-usable-scenes">10. Use Case: Filter Usable Scenes<a class="anchor-link" href="#10-use-case-filter-usable-scenes">¶</a></h2><p>A common workflow is to filter satellite scenes based on cloud coverage threshold.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="11-best-practices-and-tips">11. Best Practices and Tips<a class="anchor-link" href="#11-best-practices-and-tips">¶</a></h2><h3 id="input-requirements">Input Requirements<a class="anchor-link" href="#input-requirements">¶</a></h3><ul>
+<li><strong>Bands</strong>: Requires Red, Green, and NIR bands</li>
+<li><strong>Resolution</strong>: Optimized for 10-50m spatial resolution</li>
+<li><strong>Sensors</strong>: Validated on Sentinel-2, Landsat 8, PlanetScope, Maxar</li>
+<li><strong>Values</strong>: Works with reflectance (0-1) or digital numbers</li>
+</ul>
+<h3 id="performance-tips">Performance Tips<a class="anchor-link" href="#performance-tips">¶</a></h3><ul>
+<li>Use <strong>inference_dtype='bf16'</strong> for 2-3x speedup on supported hardware</li>
+<li>Use <strong>inference_device='cuda'</strong> if GPU available</li>
+<li>Adjust <strong>patch_size</strong> based on available memory</li>
+<li>Use <strong>batch_size &gt; 1</strong> for faster batch processing</li>
+</ul>
+<h3 id="model-versions">Model Versions<a class="anchor-link" href="#model-versions">¶</a></h3><ul>
+<li><strong>v3.0</strong> (default): Expanded training dataset for higher accuracy.</li>
+<li><strong>v2.0</strong>: A smaller faster model ensemble with improved robustness.</li>
+<li><strong>v1.0</strong>: Baseline model release supporting the OmniCloudMask paper.</li>
+</ul>
+<h3 id="when-to-use-omnicloudmask">When to Use OmniCloudMask<a class="anchor-link" href="#when-to-use-omnicloudmask">¶</a></h3><p>✓ Pre-processing satellite imagery for analysis<br/>
+✓ Filtering scenes based on cloud coverage<br/>
+✓ Creating cloud-free composites<br/>
+✓ Quality assessment of satellite data<br/>
+✓ Time series analysis (exclude cloudy observations)</p>
+<h3 id="sensor-specific-band-indices">Sensor-Specific Band Indices<a class="anchor-link" href="#sensor-specific-band-indices">¶</a></h3><p><strong>Sentinel-2:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">red_band</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">green_band</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nir_band</span><span class="o">=</span><span class="mi">8</span>
+</pre></div>
+<p><strong>Landsat 8/9:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">red_band</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">green_band</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nir_band</span><span class="o">=</span><span class="mi">5</span>
+</pre></div>
+<p><strong>PlanetScope:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">red_band</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">green_band</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nir_band</span><span class="o">=</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="summary">Summary<a class="anchor-link" href="#summary">¶</a></h2><p>In this notebook, we demonstrated:</p>
+<ol>
+<li>✅ Predicting cloud masks from numpy arrays</li>
+<li>✅ Visualizing cloud detection results</li>
+<li>✅ Calculating cloud coverage statistics</li>
+<li>✅ Creating cloud-free masks</li>
+<li>✅ Processing GeoTIFF files while preserving metadata</li>
+<li>✅ Batch processing multiple scenes</li>
+<li>✅ Filtering scenes based on cloud coverage</li>
+</ol>
+<p>OmniCloudMask is a powerful tool for cloud detection in satellite imagery, essential for many remote sensing workflows.</p>
+<h2 id="references">References<a class="anchor-link" href="#references">¶</a></h2><ul>
+<li><a href="https://github.com/DPIRD-DMA/OmniCloudMask">OmniCloudMask GitHub Repository</a></li>
+<li><a href="https://geoai.gishub.org">GeoAI Documentation</a></li>
+</ul>
 </div>
 </div>
 </div>
@@ -3913,235 +4452,19 @@ gdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gdf_props</span> <span class="o">=</span> <span class="n">geoai</span><span class="o">.</span><span class="n">add_geometric_properties</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">area_unit</span><span class="o">=</span><span class="s2">"m2"</span><span class="p">,</span> <span class="n">length_unit</span><span class="o">=</span><span class="s2">"m"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of buildings: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">gdf_props</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Cleanup temporary files</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+
+<span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Cleaned up temporary files"</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-16">gdf_props = geoai.add_geometric_properties(gdf, area_unit="m2", length_unit="m")
-print(f"Number of buildings: {len(gdf_props)}")</div>
+<div class="clipboard-copy-txt" id="cell-16"># Cleanup temporary files
+import shutil
+
+shutil.rmtree(tmpdir)
+print("Cleaned up temporary files")</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="visualize-results">Visualize results<a class="anchor-link" href="#visualize-results">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_raster</span><span class="p">(</span><span class="n">masks_path</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="n">test_aerial_url</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">"ipyleaflet"</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-17">geoai.view_raster(masks_path, nodata=0, basemap=test_aerial_url, backend="ipyleaflet")</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_vector_interactive</span><span class="p">(</span><span class="n">gdf_props</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">"area_m2"</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="n">test_aerial_url</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-18">geoai.view_vector_interactive(gdf_props, column="area_m2", tiles=test_aerial_url)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gdf_filtered</span> <span class="o">=</span> <span class="n">gdf_props</span><span class="p">[(</span><span class="n">gdf_props</span><span class="p">[</span><span class="s2">"area_m2"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of buildings: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">gdf_filtered</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-19">gdf_filtered = gdf_props[(gdf_props["area_m2"] &gt; 50)]
-print(f"Number of buildings: {len(gdf_filtered)}")</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">view_vector_interactive</span><span class="p">(</span><span class="n">gdf_filtered</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s2">"area_m2"</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="n">test_aerial_url</span><span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-20">geoai.view_vector_interactive(gdf_filtered, column="area_m2", tiles=test_aerial_url)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-21">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">geoai</span><span class="o">.</span><span class="n">create_split_map</span><span class="p">(</span>
-    <span class="n">left_layer</span><span class="o">=</span><span class="n">gdf_filtered</span><span class="p">,</span>
-    <span class="n">right_layer</span><span class="o">=</span><span class="n">test_aerial_url</span><span class="p">,</span>
-    <span class="n">left_args</span><span class="o">=</span><span class="p">{</span><span class="s2">"style"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"color"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="s2">"fillOpacity"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">}},</span>
-    <span class="n">basemap</span><span class="o">=</span><span class="n">test_aerial_url</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-21">geoai.create_split_map(
-    left_layer=gdf_filtered,
-    right_layer=test_aerial_url,
-    left_args={"style": {"color": "red", "fillOpacity": 0.2}},
-    basemap=test_aerial_url,
-)</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="performance-metrics">Performance Metrics<a class="anchor-link" href="#performance-metrics">¶</a></h2><p><strong>IoU (Intersection over Union)</strong> and <strong>Dice score</strong> are both popular metrics used to evaluate the similarity between two binary masks—often in image segmentation tasks. While they are related, they are not the same.</p>
-<hr/>
-<h3 id="definitions">🔸 <strong>Definitions</strong><a class="anchor-link" href="#definitions">¶</a></h3><h4 id="iou-jaccard-index"><strong>IoU (Jaccard Index)</strong><a class="anchor-link" href="#iou-jaccard-index">¶</a></h4><p>$$
-\text{IoU} = \frac{|A \cap B|}{|A \cup B|}
-$$</p>
-<ul>
-<li>Measures the overlap between predicted region $A$ and ground truth region $B$ relative to their union.</li>
-<li>Ranges from 0 (no overlap) to 1 (perfect overlap).</li>
-</ul>
-<h4 id="dice-score-f1-score-for-sets"><strong>Dice Score (F1 Score for Sets)</strong><a class="anchor-link" href="#dice-score-f1-score-for-sets">¶</a></h4><p>$$
-\text{Dice} = \frac{2|A \cap B|}{|A| + |B|}
-$$</p>
-<ul>
-<li>Measures the overlap between $A$ and $B$, but gives more weight to the intersection.</li>
-<li>Also ranges from 0 to 1.</li>
-</ul>
-<hr/>
-<h3 id="key-differences">🔸 <strong>Key Differences</strong><a class="anchor-link" href="#key-differences">¶</a></h3><table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Formula</th>
-<th>Penalizes</th>
-<th>Sensitivity</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>IoU</strong></td>
-<td>$\frac{TP}{TP + FP + FN}$</td>
-<td>FP and FN equally</td>
-<td>Less sensitive to small objects</td>
-</tr>
-<tr>
-<td><strong>Dice</strong></td>
-<td>$\frac{2TP}{2TP + FP + FN}$</td>
-<td>Less harsh on small mismatches</td>
-<td>More sensitive to small overlaps</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>TP: True Positive, FP: False Positive, FN: False Negative</p>
-</blockquote>
-<hr/>
-<h3 id="relationship">🔸 <strong>Relationship</strong><a class="anchor-link" href="#relationship">¶</a></h3><p>Dice and IoU are mathematically related:</p>
-<p>$$
-\text{Dice} = \frac{2 \cdot \text{IoU}}{1 + \text{IoU}} \quad \text{or} \quad \text{IoU} = \frac{\text{Dice}}{2 - \text{Dice}}
-$$</p>
-<hr/>
-<h3 id="when-to-use-what">🔸 <strong>When to Use What</strong><a class="anchor-link" href="#when-to-use-what">¶</a></h3><ul>
-<li><strong>IoU</strong>: Common in object detection and semantic segmentation benchmarks (e.g., COCO, Pascal VOC).</li>
-<li><strong>Dice</strong>: Preferred in medical imaging and when class imbalance is an issue, due to its sensitivity to small regions.</li>
-</ul>
 </div>
 </div>
 </div>
@@ -4175,7 +4498,7 @@ $$</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 17, 2025 18:07:58 UTC"><span class="timeago" datetime="2025-09-17T18:07:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 17, 2025 18:07:58 UTC">2025-09-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 30, 2025 17:19:19 UTC"><span class="timeago" datetime="2025-10-30T17:19:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 30, 2025 17:19:19 UTC">2025-10-30</span>
   </span>
 
     
@@ -4185,7 +4508,7 @@ $$</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 19, 2025 04:44:32 UTC"><span class="timeago" datetime="2025-06-19T04:44:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 19, 2025 04:44:32 UTC">2025-06-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 27, 2025 15:13:36 UTC"><span class="timeago" datetime="2025-10-27T15:13:36+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 27, 2025 15:13:36 UTC">2025-10-27</span>
   </span>
 
     
